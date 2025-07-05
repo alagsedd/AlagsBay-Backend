@@ -13,6 +13,7 @@ django-cors-headers = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 django-rest-paystack = "*"
+gunicorn = "*"
 
 [dev-packages]
 
