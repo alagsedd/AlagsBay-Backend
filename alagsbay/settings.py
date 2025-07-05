@@ -34,13 +34,13 @@ ALLOWED_HOSTS = [
 
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://alagsbay-edmund-alagpulinsas-projects.vercel.app",  # ✅ Vercel frontend
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
 
 
 # Application definition
@@ -61,16 +61,17 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',            # ✔️ keep first
+    'corsheaders.middleware.CorsMiddleware',                    # ✔️ must come before CommonMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',               # ✔️ after cors
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',                # ✔️ must be after CorsMiddleware
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'alagsbay.urls'
 
