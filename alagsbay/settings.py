@@ -40,6 +40,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://alagsbay-edmund-alagpulinsas-projects.vercel.app",  # ✅ Vercel frontend
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 
 # Application definition
 
