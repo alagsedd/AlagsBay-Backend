@@ -14,6 +14,7 @@ djoser = "*"
 djangorestframework-simplejwt = "*"
 django-rest-paystack = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
