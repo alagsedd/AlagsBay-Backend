@@ -35,9 +35,11 @@ ALLOWED_HOSTS = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",     # colon `:` before the port — ✅ VALID
-    "http://127.0.0.1:5173",     # colon `:` before the port — ✅ VALID
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://alagsbay-edmund-alagpulinsas-projects.vercel.app",  # ✅ Vercel frontend
 ]
+
 
 # Application definition
 
