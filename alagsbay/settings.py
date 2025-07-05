@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-+&wjnjkbkt$e&g&r8&3+bdgsszd#0wae(im5jtx31**$pm9+^6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['alagsbay-backend.onrender.com']  # Replace with your actual Render URL
+ALLOWED_HOSTS = [
+    'alagsbay-backend.onrender.com',
+    'alagsbay-backend-1.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 CORS_ALLOWED_ORIGINS = [
