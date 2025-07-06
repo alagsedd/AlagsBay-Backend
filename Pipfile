@@ -15,6 +15,7 @@ djangorestframework-simplejwt = "*"
 django-rest-paystack = "*"
 gunicorn = "*"
 whitenoise = "*"
+pymysql = "*"
 
 [dev-packages]
 

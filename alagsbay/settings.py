@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from datetime import timedelta
+# pylint: disable=import-error
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,8 +40,9 @@ ALLOWED_HOSTS = [
 
 
 
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://.*\.vercel\.app$",
+CORS_ALLOWED_ORIGINS = [
+    "https://alagsbay-edmund-alagpulinsas-projects.vercel.app",  # ✅ Vercel frontend
+    "http://localhost:5173",  # ✅ Local dev
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -102,22 +108,13 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'root',
         'PASSWORD': 'ZitFfyCuUyZokNazhEHWEqijWSFnDxBg',
-        'HOST': 'mysql.railway.internal',
-        'PORT': '3306',
+        'HOST': 'switchback.proxy.rlwy.net',
+        'PORT': '19852',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 
 
 # Password validation
